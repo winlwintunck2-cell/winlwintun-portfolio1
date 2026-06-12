@@ -49,7 +49,7 @@ footer { text-align:center; padding:20px 0; background:#333; color:white; margin
 
 <section id="hero" class="hero">
     <h1>Win Lwin Tun</h1>
-    <p>Web Developer | chaung kan thar, Responsive Websites</p>
+    <p>Web Developer | Chaung Kan Thar, Responsive Websites</p>
 </section>
 
 <section id="about">
@@ -92,7 +92,7 @@ footer { text-align:center; padding:20px 0; background:#333; color:white; margin
     <div style="text-align:center; margin-top:20px; font-size:16px;">
         <p>📞 Phone: 0824542317</p>
         <p>🌐 Facebook: <a href="https://www.facebook.com/share/1FxH3BP9ti/" target="_blank" style="color:#1E88E5;">https://www.facebook.com/share/1FxH3BP9ti/</a></p>
-        <p>✉ Email: WINLWINTUN.CK2@gmail.com</p>
+        <p>✉ Email: winlwintun.ck2@gmail.com</p>
         <p>💬 Chat with me: <a href="https://chatgpt.com/s/m_6a2c049fccdc819182ebda2309c9fda8" target="_blank" style="color:#1E88E5;">Chat Here</a></p>
     </div>
 </section>
