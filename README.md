@@ -49,7 +49,7 @@ footer { text-align:center; padding:20px 0; background:#333; color:white; margin
 
 <section id="hero" class="hero">
     <h1>Win Lwin Tun</h1>
-    <p>Web Developer | Modern, Responsive Websites</p>
+    <p>Web Developer | chaung kan thar, Responsive Websites</p>
 </section>
 
 <section id="about">
@@ -88,7 +88,7 @@ footer { text-align:center; padding:20px 0; background:#333; color:white; margin
         <textarea name="message" placeholder="Message" rows="5" required></textarea>
         <button type="submit">Send Message</button>
     </form>
-    <p style="color:#555;">သင့် message ကို သင့် Gmail သို့ ပို့မည်</p>
+    <p style="color:#555;">sent gmail to me</p>
     <div style="text-align:center; margin-top:20px; font-size:16px;">
         <p>📞 Phone: 0824542317</p>
         <p>🌐 Facebook: <a href="https://www.facebook.com/share/1FxH3BP9ti/" target="_blank" style="color:#1E88E5;">https://www.facebook.com/share/1FxH3BP9ti/</a></p>
