@@ -6,107 +6,127 @@
 <title>Win Lwin Tun | Pro Max Studio</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
 
+/* ================= LOADING လိုင်းကျတာနေမှာ မြန်မာနိုင်ငံကပဲနေမယ်😝================= */
+#loading{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#0f172a;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    z-index:999999;
+}
+
+.spinner{
+    width:50px;
+    height:50px;
+    border:5px solid #333;
+    border-top:5px solid #38bdf8;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+/* ================= INTRO ================= */
+#intro{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#0f172a;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:999998;
+    animation:fadeOut 1.8s ease forwards;
+    animation-delay:2.5s;
+}
+
+@keyframes fadeOut{
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+}
+
+/* ================= TEXT ================= */
+.intro-content h1{
+    font-size:3rem;
+    color:#38bdf8;
+    font-weight:800;
+    animation:float3d 3s ease-in-out infinite, neon 2s infinite;
+    text-shadow:0 0 10px #38bdf8;
+}
+
+@keyframes float3d{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0);}
+}
+
+@keyframes neon{
+    0%{color:#38bdf8;}
+    25%{color:#f472b6;}
+    50%{color:#facc15;}
+    75%{color:#34d399;}
+    100%{color:#38bdf8;}
+}
+
+/* ================= TYPING ================= */
+#typing-text{
+    margin-top:10px;
+    font-size:1.2rem;
+    color:white;
+}
+
+#typing-text::after{
+    content:"|";
+    animation:blink 0.7s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0;}
+}
+
+/* ================= MAIN ================= */
 body{
     margin:0;
     font-family:Arial;
     background:linear-gradient(135deg,#0f172a,#111827);
-    color:Green;
+    color:white;
 }
 
-/* HEADER */
 header{
     text-align:center;
     padding:15px;
-    background:rgba(0,0,0,0.4);
-    backdrop-filter:blur(10px);
 }
 
-/* LOGO IMAGE */
 .logo{
     width:90px;
     height:90px;
     border-radius:50%;
-    object-fit:cover;
     border:2px solid #d4af37;
 }
 
-logo-wrapper {
-    text-align:center;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:10px;
-}
-
-.logo-circle {
-    width:80px;
-    height:80px;
-    border-radius:50%;
-    border:2px solid #d4af37;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:relative;
-    background: radial-gradient(circle, #1a1a1a 0%, #0b0c10 100%);
-}
-
-.logo-circle::after {
-    content:'';
-    position:absolute;
-    width:88px;
-    height:88px;
-    border-radius:50%;
-    border:1px dashed rgba(212,175,55,0.4);
-}
-
-.logo-w {
-    font-family:'Cinzel', serif;
-    font-size:3rem;
-    font-weight:800;
-    background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow:0px 4px 10px rgba(0,0,0,0.5);
-}
-
-.logo-text {
-    font-family:'Cinzel', serif;
-    font-size:1.2rem;
-    font-weight:600;
-    letter-spacing:4px;
-    background: linear-gradient(to right, #ffffff 60%, #d4af37);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-section {
-    padding:60px 20px;
-    max-width:1000px;
-    margin:auto;
-}
-
-h1,h2 {
-    color:#1E88E5;
-    text-align:center;
-}
-
-/* FIXED P TAG */
-p {
-    text-align:center;
-    margin-bottom:20px;
-}
-
-/* HERO */
 .hero{
     text-align:center;
-    padding:60px 20px;
+    padding:40px 20px;
 }
 
-/* CARD */
 .card{
     background:rgba(255,255,255,0.06);
     margin:20px auto;
@@ -114,16 +134,13 @@ p {
     max-width:420px;
     padding:20px;
     border-radius:15px;
-    backdrop-filter:blur(10px);
-    border:1px solid rgba(255,255,255,0.1);
 }
 
 /* BUTTON */
 .btn{
     display:flex;
-    align-items:center;
     justify-content:center;
-    gap:10px;
+    align-items:center;
     padding:12px;
     margin:10px auto;
     width:240px;
@@ -131,27 +148,18 @@ p {
     background:rgba(255,255,255,0.08);
     color:white;
     text-decoration:none;
-    transition:.2s;
 }
 
-.btn:active{
-    transform:scale(0.95);
-}
-
-/* CHAT BUTTON */
+/* CHAT */
 .chat-btn{
     position:fixed;
     bottom:20px;
     right:20px;
     background:#38bdf8;
-    color:black;
     padding:15px;
     border-radius:50%;
-    cursor:pointer;
-    font-size:18px;
 }
 
-/* CHAT BOX */
 #chatBox{
     position:fixed;
     bottom:80px;
@@ -159,10 +167,9 @@ p {
     width:300px;
     height:420px;
     background:#0f172a;
-    border:1px solid #38bdf8;
-    border-radius:12px;
     display:none;
     flex-direction:column;
+    border:1px solid #38bdf8;
 }
 
 .chat-header{
@@ -177,25 +184,21 @@ p {
     flex:1;
     padding:10px;
     overflow:auto;
-    font-size:14px;
 }
 
 .chat-input{
     display:flex;
-    border-top:1px solid #333;
 }
 
 .chat-input input{
     flex:1;
     padding:10px;
-    border:none;
-    outline:none;
 }
 
 .chat-input button{
+    padding:10px;
     background:#38bdf8;
     border:none;
-    padding:10px;
 }
 
 </style>
@@ -203,61 +206,102 @@ p {
 
 <body>
 
+<!-- LOADING -->
+<div id="loading">
+    <div class="spinner"></div>
+    <p>Loading...</p>
+</div>
+
+<!-- INTRO -->
+<div id="intro">
+    <div class="intro-content">
+        <h1>Win Lwin Tun</h1>
+        <div id="typing-text"></div>
+    </div>
+</div>
+
 <header>
-    <img class="logo" src="1000022537.png" alt="logo">
+    <img class="logo" src="1000022537.png" alt="">
     <h3>Win Lwin Tun</h3>
 </header>
 
-<section class="hero">
-    <h1>Pro Max Web Developer</h1>
-    <p>Modern • Clean • Creative • Fast</p>
-</section>
+<div class="hero">
+    <h1>Pro Max Developer</h1>
+    <p>Modern • Clean • Creative</p>
+</div>
 
 <div class="card">
-
-    <h3>Contact Me</h3>
-
-    <a class="btn" href="tel:0824542317">
-        📞 0824542317
-    </a>
-
-    <a class="btn" href="https://www.facebook.com/share/1FxH3BP9ti/" target="_blank">
-        <i class="fab fa-facebook"></i> Facebook Profile
-    </a>
-
-    <a class="btn" href="https://t.me/winlwin1500" target="_blank">
-        <i class="fab fa-telegram"></i> Telegram @winlwin1500
-    </a>
-
-    <div class="btn">
-        ✉ WINLWINTUN.CK2@gmail.com
-    </div>
-
+    <a class="btn" href="tel:0824542317">📞 Call</a>
+    <a class="btn" href="https://facebook.com" target="_blank">Facebook</a>
+    <a class="btn" href="https://t.me" target="_blank">Telegram</a>
 </div>
 
 <div class="chat-btn" onclick="toggleChat()">💬</div>
 
 <div id="chatBox">
-
     <div class="chat-header">
-        Chat Developer
-        <span onclick="toggleChat()" style="cursor:pointer;">✖</span>
+        Chat
+        <span onclick="toggleChat()">✖</span>
     </div>
-
     <div id="messages"></div>
-
     <div class="chat-input">
-        <input id="input" placeholder="Type message...">
+        <input id="input">
         <button onclick="sendMsg()">Send</button>
     </div>
-
 </div>
 
 <script>
 
+/* LOADING SAFE REMOVE */
+window.addEventListener("load",()=>{
+    setTimeout(()=>{
+        document.getElementById("loading").style.display="none";
+    },500);
+});
+
+/* INTRO AUTO REMOVE */
+setTimeout(()=>{
+    let intro=document.getElementById("intro");
+    if(intro) intro.remove();
+},3000);
+
+/* TYPING EFFECT */
+const texts=[
+"Loading Pro System...",
+"Initializing UI...",
+"Welcome to Win Lwin Tun 🚀",
+"Modern • Clean • Pro Max"
+];
+
+let i=0,j=0,del=false;
+
+function type(){
+    let el=document.getElementById("typing-text");
+    if(!el) return;
+
+    let word=texts[i];
+
+    el.innerHTML=word.substring(0,j);
+
+    if(!del){
+        j++;
+        if(j>word.length){del=true;setTimeout(type,1000);return;}
+    }else{
+        j--;
+        if(j===0){del=false;i=(i+1)%texts.length;}
+    }
+
+    setTimeout(type,80);
+}
+
+window.addEventListener("load",()=>{
+    setTimeout(type,800);
+});
+
+/* CHAT */
 function toggleChat(){
     let box=document.getElementById("chatBox");
-    box.style.display = (box.style.display==="flex") ? "none" : "flex";
+    box.style.display = box.style.display==="flex"?"none":"flex";
 }
 
 function sendMsg(){
@@ -265,13 +309,10 @@ function sendMsg(){
     let msg=input.value;
     if(!msg) return;
 
-    let box=document.getElementById("messages");
-
-    box.innerHTML += "<div>👤 You: " + msg + "</div>";
+    document.getElementById("messages").innerHTML += "👤 "+msg+"<br>";
 
     setTimeout(()=>{
-        box.innerHTML += "<div>👨‍💻 Dev: ငါကဝင်းလွင်ထွန်းပါ ဘာကူညီရမလဲ 😎</div>";
-        box.scrollTop = box.scrollHeight;
+        document.getElementById("messages").innerHTML += "👨‍💻 Dev reply<br>";
     },500);
 
     input.value="";
